@@ -1,3 +1,4 @@
+import CustomEditor from "./components/Editor/CustomEditor";
 import Title from "./components/Title/Title";
 import styles from "./styles/app.module.css";
 
@@ -8,6 +9,10 @@ function App() {
         <header>
           <Title name="Akash Agarwal" />
         </header>
+
+        <section>
+          <CustomEditor />
+        </section>
       </main>
     </>
   );
