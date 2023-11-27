@@ -1,9 +1,19 @@
 import "draft-js/dist/Draft.css";
 
-import { Editor, EditorState } from "draft-js";
 import { useEffect, useState } from "react";
 
+import Editor from "@draft-js-plugins/editor";
+import { EditorState } from "draft-js";
+import createCustomPlugin from "./CustomPlugin";
 import styles from "./customEditor.module.css";
+
+const plugins = [createCustomPlugin()];
+
+const styleMap = {
+  HEADING: {
+    textDecoration: "line-through",
+  },
+};
 
 function CustomEditor() {
   const [editorState, setEditorState] = useState(() =>
@@ -22,6 +32,8 @@ function CustomEditor() {
         editorState={editorState}
         onChange={setEditorState}
         placeholder="Start writing..."
+        plugins={plugins}
+        customStyleMap={styleMap}
       />
     </div>
   );
