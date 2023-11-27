@@ -53,6 +53,7 @@
   margin-left: auto;
   display: block;
   transition: all 0.2s ease-in-out;
+  margin-top: 1em;
 }
 
 .saveButton:hover {

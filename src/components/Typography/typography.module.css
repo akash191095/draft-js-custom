@@ -5,3 +5,9 @@
   text-decoration: underline;
   color: black;
 }
+
+@media (max-width: 750px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}

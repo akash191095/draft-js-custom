@@ -1,3 +1,9 @@
 .titleContainer {
   text-align: center;
 }
+
+@media (max-width: 750px) {
+  .titleContainer {
+    text-align: right;
+  }
+}
