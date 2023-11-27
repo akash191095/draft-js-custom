@@ -5,6 +5,7 @@
   margin-top: 2em;
   border-radius: 10px;
   padding: 1em;
+  overflow-y: scroll;
 }
 
 .heading {
@@ -34,4 +35,11 @@
   font-size: 1rem;
   font-weight: 400;
   text-decoration: underline;
+}
+
+.code {
+  background-color: rgba(99, 99, 99, 0.1);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin: 0.5em 0;
 }

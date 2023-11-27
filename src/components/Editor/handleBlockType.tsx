@@ -48,6 +48,9 @@ const handleBlockType = (editorState: EditorState, character: string) => {
   if (line === "*** ") {
     return changeCurrentBlockType(editorState, "UNDERLINE", "");
   }
+  if (line === "``` ") {
+    return changeCurrentBlockType(editorState, "CODE_BLOCK", "");
+  }
   return editorState;
 };
 

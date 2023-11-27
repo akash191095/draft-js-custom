@@ -1,4 +1,4 @@
-import { checkCharacterForState, insertEmptyBlock } from "./editorUtils";
+import { checkCharacterForState, checkReturnForState } from "./editorUtils";
 
 import { EditorState } from "draft-js";
 import { Map } from "immutable";
@@ -24,6 +24,11 @@ function UnderLine(props: any) {
   return <span className={styles.underline} {...props}></span>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function CodeBlock(props: any) {
+  return <div className={styles.code} {...props}></div>;
+}
+
 const createCustomPlugin = () => {
   const store = {};
   return {
@@ -44,6 +49,10 @@ const createCustomPlugin = () => {
       UNDERLINE: {
         element: "span",
         wrapper: <UnderLine />,
+      },
+      CODE_BLOCK: {
+        element: "pre",
+        wrapper: <CodeBlock />,
       },
     }),
     // @ts-expect-error no types
@@ -67,7 +76,7 @@ const createCustomPlugin = () => {
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     handleReturn(_ev: any, editorState: EditorState) {
-      const newEditorState = insertEmptyBlock(editorState);
+      const newEditorState = checkReturnForState(editorState);
       if (editorState !== newEditorState) {
         // @ts-expect-error ignore
         store.setEditorState(newEditorState);
