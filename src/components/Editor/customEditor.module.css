@@ -43,3 +43,22 @@
   border-radius: 5px;
   margin: 0.5em 0;
 }
+
+.saveButton {
+  padding: 1em 2em;
+  background-color: #008cba;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  margin-left: auto;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+
+.saveButton:hover {
+  opacity: 0.8;
+}
+
+.saveButton:active {
+  background-color: #02a0d4;
+}
